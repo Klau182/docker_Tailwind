@@ -150,3 +150,84 @@ configuramos la ruta
 
   root 'pages#index'
   get 'pages/landing_page'
+
+# instalacion fontawesome
+
+docker compose run web ./bin/importmap pin @fortawesome/fontawesome-free @fortawesome/fontawesome-svg-core @fortawesome/free-brands-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
+
+con esto se instalaron algunas librerias de fontawesome
+
+luego pegamos esto en el aplication.js
+
+import {far} from "@fortawesome/free-regular-svg-icons"
+import {fas} from "@fortawesome/free-solid-svg-icons"
+import {fab} from "@fortawesome/free-brands-svg-icons"
+import {library} from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-free"
+library.add(far, fas, fab)
+
+levantamos la imagen
+
+docker compose build
+y luego
+docker compose up
+
+en otro tab de terminal escribimos
+
+docker compose run web rails assets:precompile
+
+en el archivo index copiamos el codigo del icono
+
+<i class="fa-solid fa-house-user"></i>
+
+el landing page en la pagina principal, mientras que el index sera 
+la vista que se vea cuando se inicia sesion, index y landing page son metodos
+
+luego en la carpeta views creamos la carpeta shared y dentro de la carpeta creamos un archivo
+llamado _main_navbar.html.erb y otro llamado
+_footer.html.erb
+
+luego renderizaremos nuestro archivo para que se visualize en la vista
+en la carpeta layouts en el aplication.html.erb llamamos al archivo
+<%= render "shared/main_navbar" %>
+
+le asignamos una clase al navbar luego en la terminal escribimos
+la siguiente linea para que se recarguen los estilos
+
+ docker compose run web rails assets:precompile
+
+ luego cerramos ambas terminales y subimos denuevo el servidor con docker compose up
+
+
+cada vez que agreguemos una nueva clase hay que ejecutar
+docker compose run web rails assets:precompile y bajar y subir servidor
+
+para evitarnos esto buscamos el cdn de tailwind y lo pegamos en el aplication.html.erb
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+en el archivo tailwind.config.js pegamos los estilos personalizados de cada elemento
+
+colors: {
+"mainColor": "#2c3639",
+"white": "#ffffff",
+"signIn": "#9ff1e5",
+"signUp": "#ecffc8",
+"fontColor": "#0c5d75",
+"footerGray": "#f5f5f5",
+"editIcon": "#047487",
+"removeIcon": "#920404",
+"evaluationStrong": "#126f05",
+"evaluationLight": "#ddffd9",
+"chapterStrong": "#05636f",
+"surveyStrong": "#686f05",
+}
+
+ejecutamos:
+
+docker compose run web rails assets:precompile
+docker compose build
+y levantamos servidor nuevamente
+
+hasta este commit se cinfiguraron los colores y estilos de los botones tipo de letra
+de los botones signin y signup
