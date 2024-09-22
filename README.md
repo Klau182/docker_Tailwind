@@ -229,5 +229,8 @@ docker compose run web rails assets:precompile
 docker compose build
 y levantamos servidor nuevamente
 
-hasta este commit se cinfiguraron los colores y estilos de los botones tipo de letra
+hasta este commit se configuraron los colores y estilos de los botones tipo de letra
 de los botones signin y signup
+
+configuracion footer
+
