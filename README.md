@@ -234,3 +234,5 @@ de los botones signin y signup
 
 configuracion footer
 
+configuracion de landing page iconos de redes sociales
+
