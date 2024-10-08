@@ -236,3 +236,60 @@ configuracion footer
 
 configuracion de landing page iconos de redes sociales
 
+# instalacion de devise
+
+en el archivo Gemfile agregamos 
+
+gem "devise"
+
+ejecutamos el comando 
+
+docker compose build
+
+levantamos el contenedor
+
+docker compose up
+
+abrimos un nuevo bash y escribimos lo siguiente
+
+docker compose run web bash
+
+aqui estamos dentro del contenedor con una bash abierta
+
+instalar devise con el siguiente comando
+
+rails g devise:install
+
+luego en el archivo development que esta dentro de config y en production 
+pegamos la siguiente linea de codigo
+
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+ahora crearemos la tabla de usuario
+
+rails g devise User
+
+en la terminal escribimos esto, lo cual nos pedira nuestra clave de acceso
+
+sudo chown -R $USER:$clau . 
+
+construimos la imagen de nuevo con docker compose build
+
+levantamos el contenedor
+
+luego para migrar la bd abrimos otro bash y escribimos 
+
+docker compose run web bash para abrir un bash dentro del contenedor
+y migramos la bd con rails db:migrate
+
+ahora generaremos las vistas de devise
+
+rails g devise:views
+
+
+
+
+
+
+
+
