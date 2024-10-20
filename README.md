@@ -303,7 +303,6 @@ construimos la imagen nuevamente y levantamos docker
 si un usuario esta autenticado se mostrara una vista de lo contrario
 sera otra vista que se mostrara
 
- 
   authenticated(:user) do
     root "pages#index", as: :authenticaded_root
   end  
@@ -315,8 +314,6 @@ sera otra vista que se mostrara
   # configurando envio de correo con sendgrid
 
 api key de sendgrid
-
-
 
 luego vamos a la pagina de dotend
 
@@ -341,14 +338,12 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-user
-_name => 'apikey'
+:user_name => 'apikey'
 :password => Rails.application.credentials.sendgrid_secret_key,
-: domain => 'localhost: 3000', :address => 'smtp.sendgrid.net',
+:domain => 'localhost: 3000', :address => 'smtp.sendgrid.net',
 :port => 587,
-: authentication => :plain,
-:enable_starttls
-_auto => true
+:authentication => :plain,
+:enable_starttls_auto => true
 }
 
 borramos las lineas de action mailers que estan en este archivo
@@ -356,9 +351,5 @@ borramos las lineas de action mailers que estan en este archivo
 luego en el archivo ubicado en initializers/devise.rb 
 pegamos el correo electronico con cual configuramos sendgrid
 
-
 construimos la imagen nuevamente
 y levantamos el servidor
-
-
-
