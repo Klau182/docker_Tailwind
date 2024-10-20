@@ -1,20 +1,23 @@
 <header>
   <nav class="flex justify-between bg-mainColor text-white p-4">  
-    <ul class="flex gap-3">  
-      <li>
-        <i class="fa-solid fa-book text-2xl"></i>
-      </li>
-      <li>
-        survey rails app
-      </li>
-    </ul>
-    <ul class="flex gap-3">
-      <li class="bg-signIn rounded">
-        <%= button_to "sign in", "#", class: "py-1 px-4 text-sm text-black font-semibold" %>
-      </li>
-      <li class="bg-signUp rounded">
-       <%= button_to "sign up", "#",  class: "py-1 px-4 text-sm text-black font-semibold" %>
-      </li>
-    </ul>
+    <ul>
+      <%= link_to root_path, class:"flex gap-3"  do %>
+        <i class="fa-solid fa-book text-2xl"></i> survey rails app
+      <% end %>
+     </ul>
+     <ul class="flex gap-3">
+       <% if current_user %>
+         <li class="bg-white rounded">
+           <%= button_to "sign out", destroy_user_session_path, method: :delete, class: "py-1 px-4 text-sm text-black font-semibold" %>
+         </li>
+         <% else %>
+           <li class="bg-signIn rounded">
+             <%= button_to "sign in", new_user_session_path, method: :get, class: "py-1 px-4 text-sm text-black font-semibold" %>
+           </li>
+           <li class="bg-signUp rounded">
+             <%= button_to "sign up", new_user_registration_path, method: :get, class: "py-1 px-4 text-sm text-black font-semibold" %>
+           </li>
+        <% end %>
+     </ul>
   </nav>
 </header>

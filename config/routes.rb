@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'pages/index'
-  #root 'pages#landing_page'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+ 
+  authenticated(:user) do #cuando el usuario esta autenticado
+    root "pages#index", as: :authenticaded_root #mostrara el index
+  end  
 
-  # Defines the root path route ("/")
-   root "articles#index"
+  unauthenticated(:user) do  #cuando el ususario no esta autenticado
+    root "pages#landing_page" #se mostrara el landing page
+  end  
+  
 end

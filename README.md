@@ -287,9 +287,28 @@ ahora generaremos las vistas de devise
 rails g devise:views
 
 
+en el parcial de nabvar cambiamos las rutas
+
+<%= button_to "sign in", new_user_session_path, class: "py-1 px-4 text-sm text-black font-semibold" %>
+
+<%= button_to "sign up", new_user_registration_path,  class: "py-1 px-4 text-sm text-black font-semibold" %>
+
+en el modelo user copiamos esto en la seccion devise
+
+:confirmable, :trackable
+
+construimos la imagen nuevamente y levantamos docker 
 
 
+si un usuario esta autenticado se mostrara una vista de lo contrario
+sera otra vista que se mostrara
 
+ 
+  authenticated(:user) do
+    root "pages#index", as: :authenticaded_root
+  end  
 
-
+  unauthenticated(:user) do
+    root "pages#landing_page"
+  end  
 
