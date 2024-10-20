@@ -312,3 +312,54 @@ sera otra vista que se mostrara
     root "pages#landing_page"
   end  
 
+  # configurando envio de correo con sendgrid
+
+api key de sendgrid
+
+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
+
+luego vamos a la pagina de dotend
+
+instamos la gema de dotenv en el gemfile
+
+gem 'dotenv'
+
+reconstruimos el contenedor
+
+creamos un archivo .env y guardamos la llave api que se almacena en esa variable .env
+
+a continuacion creamos una nueva bash
+
+ docker compose run web bash  
+
+ejecutamos bundle
+
+copiamos el archivo de configuracion en config/envoroment/development
+
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+user
+_name => 'apikey'
+:password => Rails.application.credentials.sendgrid
+_secret_key,
+: domain => 'localhost: 3000', :address => 'smtp.sendgrid.net',
+:port => 587,
+: authentication => :plain,
+:enable_starttls
+_auto => true
+}
+
+borramos las lineas de action mailers que estan en este archivo
+
+luego en el archivo ubicado en initializers/devise.rb 
+pegamos el correo electronico con cual configuramos sendgrid
+
+
+construimos la imagen nuevamente
+y levantamos el servidor
+
+
+
