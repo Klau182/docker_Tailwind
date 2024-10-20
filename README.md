@@ -323,7 +323,7 @@ gem 'dotenv'
 
 reconstruimos el contenedor
 
-creamos un archivo .env y guardamos la llave api que se almacena en esa variable .env
+creamos un archivo .env y guardamos la llave api que se almacena en esa variable env
 
 a continuacion creamos una nueva bash
 
