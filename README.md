@@ -316,7 +316,7 @@ sera otra vista que se mostrara
 
 api key de sendgrid
 
-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
+
 
 luego vamos a la pagina de dotend
 
@@ -343,8 +343,7 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
 user
 _name => 'apikey'
-:password => Rails.application.credentials.sendgrid
-_secret_key,
+:password => Rails.application.credentials.sendgrid_secret_key,
 : domain => 'localhost: 3000', :address => 'smtp.sendgrid.net',
 :port => 587,
 : authentication => :plain,
