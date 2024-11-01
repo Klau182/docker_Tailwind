@@ -426,3 +426,8 @@ luego en el archivo ubicado en initializers/devise.rb
 pegamos el correo electronico con cual configuramos sendgrid
 
 construimos la imagen nuevamente y levantamos el servidor
+
+
+## Segundo navbar
+
+creamos un parcial llamado _right_navbar

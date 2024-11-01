@@ -1,4 +1,36 @@
-<div>
-  <h1 class="font-bold text-4xl">Pages#index</h1>
-  <p>Find me in app/views/pages/index.html.erb</p>
+<section class="flex justify-around h-screen items-center">
+
+  <div>
+    <h1 class="text-center font-bold text-3xl text-mainColor">
+      Survey Rails App
+    </h1>
+    <p class="text-center text-sm text-mainColor font-semibold">
+      survey-rails-app.com
+    </p>
+    <p class="py-5 text-sm font-semibold text-mainColor text-center">
+      lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun <br>
+      lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun <br>
+      lorem ipsun lorem ipsun
+    </p>
+
+  <div class="flex w-full justify-around">
+    <div class="bg-evaluationStrong p-3 text-white text-sm font-semibold rounded-lg">
+      <%= button_to root_path, id: "create_evaluation_index" do %>
+        create evaluation
+      <% end %>
+    </div>
+
+    <div class="bg-chapterStrong p-3 text-white text-sm font-semibold rounded-lg">
+      <%= button_to root_path, id: "create_evaluation_index" do %>
+        create chapter
+      <% end %> 
+    </div>
+  </div> 
 </div>
+
+  <div class="flex flex-col justify-center">
+    <span class="text-center text-lg font-semibold text-mainColor"> Your are in </span>
+    <%= image_tag("railsapp.png", width: "400") %>
+  </div>
+
+</section>
