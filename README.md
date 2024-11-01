@@ -431,3 +431,43 @@ construimos la imagen nuevamente y levantamos el servidor
 ## Segundo navbar
 
 creamos un parcial llamado _right_navbar
+
+# Generando el modelo
+
+entramos a la bash dentro de docker y ejecutamos
+
+rails g model Section name description type body:text user:references
+
+luego migramos
+
+rails db:migrate
+
+generamos un scaffold solo con un controlador 
+
+rails g scaffold_controller Evaluation name description types body_text user:references
+
+se crearon los 2 controladores para evaluations y chapters
+
+reconstruimos la imagen
+
+falto referenciar al modelo de section
+
+en el controlador de evaluation en el index cambiamos 
+
+ def index
+    @evaluations = Section.all
+  end
+
+ahora al pulsar create evaluation nos va a llevar a la vista de evaluation
+en el index de pages en la seccion de evaluation cambiamos la ruta a evaluations_path
+
+<div class="bg-evaluationStrong p-3 text-white text-sm font-semibold rounded-lg">
+      <%= button_to evaluations_path, method: :get id: "create_evaluation_index" do %>
+        create evaluation
+      <% end %>
+
+ahora realizaremos lo mismo con el boton de chapter
+
+
+
+

@@ -15,13 +15,13 @@
 
   <div class="flex w-full justify-around">
     <div class="bg-evaluationStrong p-3 text-white text-sm font-semibold rounded-lg">
-      <%= button_to root_path, id: "create_evaluation_index" do %>
+      <%= button_to evaluations_path, method: :get, id: "create_evaluation_index" do %>
         create evaluation
       <% end %>
     </div>
 
     <div class="bg-chapterStrong p-3 text-white text-sm font-semibold rounded-lg">
-      <%= button_to root_path, id: "create_evaluation_index" do %>
+      <%= button_to chapters_path, method: :get, id: "create_evaluation_index" do %>
         create chapter
       <% end %> 
     </div>
