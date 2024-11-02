@@ -474,6 +474,11 @@ en la carpta de evaluations construimos un parcial _welcome.html.erb y en el arc
 
 ahora creamos el parcial del modal
 
+ahora dentro del modal crearemos el formulario con turbo_frame
+
+se renderiza en el new el formulario que hay en evaluations
+
+
 
 
 
