@@ -1,0 +1,23 @@
+<section class="flex justify-around items-center p-32">
+  <div>
+    <%= image_tag("evaluations_index.png", width: 400) %>
+  </div>
+
+  <div>
+    <h1 class="text-center text-3xl font-bold text-evaluationStrong"> Evaluations </h1>
+    <p class="text-center py-2 font-semibold text-evaluationStrong">
+      lorem ipsun in dolor upsin lored lorem ipsun in dolor upsin lored <br>
+      lorem ipsun in dolor upsin lored lorem ipsun in dolor upsin lored <br>
+      lorem ipsun in dolor upsin lored
+    </p>
+    <div class="flex justify-center my-4">
+      <%= link_to new_evaluation_path, id:"create_evaluation_welcome", data: {turbo_frame: "modal"} do %>
+        <div class="p-3 bg-evaluationStrong text-white text-sm font-semibold rounded-lg">
+          create evaluation
+        </div>  
+      <% end %>
+    </div>
+  </div>
+
+</section>
+

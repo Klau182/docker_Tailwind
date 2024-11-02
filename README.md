@@ -468,6 +468,19 @@ en el index de pages en la seccion de evaluation cambiamos la ruta a evaluations
 
 ahora realizaremos lo mismo con el boton de chapter
 
+construccion parcial de evaluations
+
+en la carpta de evaluations construimos un parcial _welcome.html.erb y en el archivo index lo renderizamos
+
+ahora creamos el parcial del modal
+
+
+
+
+
+
+
+
 
 
 
